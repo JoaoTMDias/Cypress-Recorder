@@ -15,10 +15,10 @@ describe('Header', () => {
     };
   });
   it('Should render Header with title of Cypress Recorder', () => {
-    wrapper = shallow(<Header { ...props } />);
+    wrapper = shallow(<Header {...props} />);
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.exists(InfoButton)).toBe(true);
-    const title = wrapper.find('#title');
+    const title = wrapper.find(".header__title");
     expect(title.text()).toBe('Cypress Recorder');
   });
 });

@@ -15,10 +15,18 @@ export default ({ copyToClipboard }: ClipboardButtonProps) => {
     }
   };
 
+  const buttonText = success ? 'Copied!' : 'Copy to Clipboard';
+  const buttonTitle = success ? 'Content copied to clipboard!' : 'Click to copy to Clipboard'
+
   return (
-    <div id="copy-wrap">
-      <button type="button" id="copy" className="button" onClick={handleClick}>
-        {success ? 'Copied!' : 'Copy to Clipboard'}
+    <div className="footer__copy-wrap">
+      <button
+        type="button"
+        className="footer__copy button"
+        onClick={handleClick}
+        title={buttonTitle}
+      >
+        {buttonText}
       </button>
     </div>
   );

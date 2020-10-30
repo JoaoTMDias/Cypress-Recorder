@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header Should render Header with title of Cypress Recorder 1`] = `
-<div
-  id="header"
+<header
+  className="header"
 >
   <h1
-    id="title"
+    className="header__title"
   >
     Cypress Recorder
   </h1>
@@ -13,5 +13,5 @@ exports[`Header Should render Header with title of Cypress Recorder 1`] = `
     shouldInfoDisplay={false}
     toggleInfoDisplay={[MockFunction]}
   />
-</div>
+</header>
 `;

@@ -24,7 +24,7 @@ describe('InfoButton', () => {
     props.shouldInfoDisplay = true;
     wrapper = shallow((<InfoButton {...props} />));
     const button = wrapper.find('button');
-    expect(button.text()).toBe('Recording Menu');
+    expect(button.text()).toBe('Back to Recording');
   });
   it('Should invoke toggleInfoDisplay when button is clicked', () => {
     props.shouldInfoDisplay = true;

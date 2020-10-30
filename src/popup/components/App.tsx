@@ -93,22 +93,24 @@ export default () => {
   };
 
   return (
-    <div id="App">
+    <div className="cypress-recorder-app">
       <Header shouldInfoDisplay={shouldInfoDisplay} toggleInfoDisplay={toggleInfoDisplay} />
-      {
-        (shouldInfoDisplay
-          ? <Info />
-          : (
-            <Body
-              codeBlocks={codeBlocks}
-              recStatus={recStatus}
-              isValidTab={isValidTab}
-              destroyBlock={destroyBlock}
-              moveBlock={moveBlock}
-            />
+      <main className="main">
+        {
+          (shouldInfoDisplay
+            ? <Info />
+            : (
+              <Body
+                codeBlocks={codeBlocks}
+                recStatus={recStatus}
+                isValidTab={isValidTab}
+                destroyBlock={destroyBlock}
+                moveBlock={moveBlock}
+              />
+            )
           )
-        )
-      }
+        }
+      </main>
       <Footer
         isValidTab={isValidTab}
         recStatus={recStatus}

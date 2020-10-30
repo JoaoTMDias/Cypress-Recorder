@@ -16,10 +16,10 @@ export default ({
   recStatus,
   handleToggle,
   copyToClipboard,
-} : FooterProps) => (
-  <div id="footer">
-    <ToggleButton recStatus={recStatus} handleToggle={handleToggle} isValidTab={isValidTab} />
-    {recStatus === RecState.PAUSED && <ResetButton handleToggle={handleToggle} />}
-    {recStatus === RecState.PAUSED && <ClipboardButton copyToClipboard={copyToClipboard} />}
-  </div>
-);
+}: FooterProps) => (
+    <footer className="footer">
+      <ToggleButton recStatus={recStatus} handleToggle={handleToggle} isValidTab={isValidTab} />
+      {recStatus === RecState.PAUSED && <ResetButton handleToggle={handleToggle} />}
+      {recStatus === RecState.PAUSED && <ClipboardButton copyToClipboard={copyToClipboard} />}
+    </footer>
+  );

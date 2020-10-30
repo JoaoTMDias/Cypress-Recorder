@@ -23,7 +23,14 @@ exports[`CodeBlock CodeBlock Should render a CodeBlock 1`] = `
     onClick={[Function]}
     type="button"
   >
-    x
+    <span>
+      x
+    </span>
+    <span
+      className="sr-only"
+    >
+      Delete this line
+    </span>
   </button>
 </li>
 `;

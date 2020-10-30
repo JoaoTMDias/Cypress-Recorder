@@ -2,12 +2,11 @@
 
 exports[`toggle button should call handletoggle with argument "startRec" when clicked and recStatus is "off" and tab is valid 1`] = `
 <div
-  id="toggle-wrap"
+  className="footer__toggle-wrap"
 >
   <button
-    className="button"
+    className="button footer__toogle"
     disabled={false}
-    id="toggle"
     onClick={[Function]}
     type="button"
   >
@@ -18,12 +17,11 @@ exports[`toggle button should call handletoggle with argument "startRec" when cl
 
 exports[`toggle button should call handletoggle with argument "startRec" when clicked and recStatus is "paused" 1`] = `
 <div
-  id="toggle-wrap"
+  className="footer__toggle-wrap"
 >
   <button
-    className="button"
+    className="button footer__toogle"
     disabled={false}
-    id="toggle"
     onClick={[Function]}
     type="button"
   >
@@ -34,12 +32,11 @@ exports[`toggle button should call handletoggle with argument "startRec" when cl
 
 exports[`toggle button should call handletoggle with argument "stopRec" when clicked and recStatus is "on" 1`] = `
 <div
-  id="toggle-wrap"
+  className="footer__toggle-wrap"
 >
   <button
-    className="button"
+    className="button footer__toogle"
     disabled={false}
-    id="toggle"
     onClick={[Function]}
     type="button"
   >
@@ -50,12 +47,11 @@ exports[`toggle button should call handletoggle with argument "stopRec" when cli
 
 exports[`toggle button should not call handletoggle when clicked and recStatus is "off" and tab is invalid 1`] = `
 <div
-  id="toggle-wrap"
+  className="footer__toggle-wrap"
 >
   <button
-    className="disabled-button"
+    className="disabled-button footer__toogle"
     disabled={true}
-    id="toggle"
     onClick={[Function]}
     type="button"
   >

@@ -20,11 +20,10 @@ export default ({ recStatus, handleToggle, isValidTab }: ToggleButtonProps) => {
     : 'button';
 
   return (
-    <div id="toggle-wrap">
+    <div className="footer__toggle-wrap">
       <button
         type="button"
-        id="toggle"
-        className={buttonClass}
+        className={`${buttonClass} footer__toogle`}
         onClick={handleClick}
         disabled={!isValidTab && (recStatus === RecState.OFF || recStatus === RecState.PAUSED)}
       >

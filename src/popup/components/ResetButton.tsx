@@ -6,11 +6,11 @@ export interface ResetButtonProps {
 }
 
 export default ({ handleToggle }: ResetButtonProps) => (
-  <div id="reset-wrap">
+  <div className="footer__reset-wrap">
     <button
       type="button"
-      id="reset"
-      className="button"
+      className="footer__reset button"
+      title="Reset the contents of this recording"
       onClick={() => handleToggle(ControlAction.RESET)}
     >
       Reset

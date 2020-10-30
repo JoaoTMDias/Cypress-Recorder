@@ -28,6 +28,10 @@ export default ({
   const preSelector = text.slice(0, i);
   const selector = text.slice(i, j);
   const postSelector = text.slice(j);
+
+
+  const buttonText = "Delete this line";
+
   return (
     <li
       className={dragStatus}
@@ -44,7 +48,14 @@ export default ({
         </mark>
         {postSelector}
       </span>
-      <button type="button" className="delete" onClick={() => destroyBlock(index)}>x</button>
+      <button
+        type="button"
+        className="delete"
+        onClick={() => destroyBlock(index)}
+      >
+        <span>x</span>
+        <span className="sr-only">{buttonText}</span>
+      </button>
     </li>
   );
 };

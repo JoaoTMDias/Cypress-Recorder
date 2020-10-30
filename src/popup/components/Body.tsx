@@ -19,8 +19,8 @@ export default ({
   destroyBlock,
   moveBlock,
 }: BodyProps) => (
-  <div id="body">
-    {recStatus === RecState.OFF && <LandingBox isValidTab={isValidTab} />}
-    {recStatus !== RecState.OFF && <CodeDisplay codeBlocks={codeBlocks} destroyBlock={destroyBlock} moveBlock={moveBlock} />}
-  </div>
-);
+    <section className="body">
+      {recStatus === RecState.OFF && <LandingBox isValidTab={isValidTab} />}
+      {recStatus !== RecState.OFF && <CodeDisplay codeBlocks={codeBlocks} destroyBlock={destroyBlock} moveBlock={moveBlock} />}
+    </section>
+  );

@@ -2,19 +2,23 @@
 
 exports[`App Should match snapshot, render Header, Body, and Footer 1`] = `
 <div
-  id="App"
+  className="cypress-recorder-app"
 >
   <Component
     shouldInfoDisplay={false}
     toggleInfoDisplay={[Function]}
   />
-  <Component
-    codeBlocks={Array []}
-    destroyBlock={[Function]}
-    isValidTab={true}
-    moveBlock={[Function]}
-    recStatus={1}
-  />
+  <main
+    className="main"
+  >
+    <Component
+      codeBlocks={Array []}
+      destroyBlock={[Function]}
+      isValidTab={true}
+      moveBlock={[Function]}
+      recStatus={1}
+    />
+  </main>
   <Component
     copyToClipboard={[Function]}
     handleToggle={[Function]}

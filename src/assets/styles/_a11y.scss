@@ -1,0 +1,52 @@
+.sr-only {
+	position: absolute;
+	width: 0.0625em;
+	height: 0.0625em;
+	padding: 0;
+	margin: -0.0625em;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+/*
+  This will hide the focus indicator if the element receives focus via the mouse,
+  but it will still show up on keyboard focus.
+*/
+.js-focus-visible :focus:not(.focus-visible) {
+	outline: none;
+}
+
+@mixin colorScheme($scheme: dark) {
+	@media (prefers-color-scheme: #{$scheme}) {
+		:root {
+			@content;
+		}
+	}
+}
+
+@include colorScheme() {
+	--color-primary: #{invert($color-primary, 100%)};
+	--color-primary-background: #{invert($color-primary-background, 100%)};
+	--color-cypress-green: #{invert($color-cypress-green, 100%)};
+	--color-pale-green: #{invert($color-pale-green, 100%)};
+	--color-black: #{invert($color-black, 100%)};
+	--color-cone-primary: #{invert($color-cone-primary, 100%)};
+	--color-cone-secondary: #{invert($color-cone-secondary, 100%)};
+}
+
+@include colorScheme(light) {
+	--color-primary: $color-primary;
+	--color-primary-background: $color-primary-background;
+	--color-cypress-green: $color-cypress-green;
+	--color-pale-green: $color-pale-green;
+	--color-black: $color-black;
+	--color-cone-primary: $color-cone-primary;
+	--color-cone-secondary: $color-cone-secondary;
+}
+
+@mixin motion() {
+	@media (prefers-reduced-motion: no-preference) {
+		@content;
+	}
+}

@@ -1,0 +1,15 @@
+@import "mixins";
+
+$font-stack: "Roboto", -apple-system, BlinkMacSystemFont, Open Sans, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+	Helvetica Neue, sans-serif;
+
+$color-primary: #333;
+$color-primary-background: #fff8dc;
+$color-cypress-green: rgb(49, 158, 107);
+$color-pale-green: rgb(248, 251, 249);
+$color-black: #111;
+$color-cone-primary: #319e6b;
+$color-cone-secondary: #6aae8f;
+
+$max-height: rem-calc(640);
+$max-width: rem-calc(848);

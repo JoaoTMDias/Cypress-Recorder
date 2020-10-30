@@ -93,7 +93,7 @@ export default () => {
   };
 
   return (
-    <div className="cypress-recorder-app">
+    <>
       <Header shouldInfoDisplay={shouldInfoDisplay} toggleInfoDisplay={toggleInfoDisplay} />
       <main className="main">
         {
@@ -117,6 +117,6 @@ export default () => {
         handleToggle={handleToggle}
         copyToClipboard={copyToClipboard}
       />
-    </div>
+    </>
   );
 };

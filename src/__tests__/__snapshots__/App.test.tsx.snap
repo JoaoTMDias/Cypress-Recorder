@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App Should match snapshot, render Header, Body, and Footer 1`] = `
-<div
-  className="cypress-recorder-app"
->
+<Fragment>
   <Component
     shouldInfoDisplay={false}
     toggleInfoDisplay={[Function]}
@@ -25,5 +23,5 @@ exports[`App Should match snapshot, render Header, Body, and Footer 1`] = `
     isValidTab={true}
     recStatus={1}
   />
-</div>
+</Fragment>
 `;

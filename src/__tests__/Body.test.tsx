@@ -24,14 +24,26 @@ describe('Body', () => {
     expect(wrapper.exists(LandingBox)).toBe(true);
     expect(wrapper.exists(CodeDisplay)).toBe(false);
   });
-  it('Should render CodeDisplay when recStatus is paused', () => {
+  it('Should render CodeDisplay when recStatus is paused and has codeBlocks', () => {
     props.recStatus = RecState.PAUSED;
+    props.codeBlocks = [
+      {
+        id: "2XSrhOx7E",
+        value: "cy.visit('https://review.feedzai.com/D27821#change-IxGsRMpnU7Uu');"
+      }
+    ];
     wrapper = shallow(<Body {...props} />);
     expect(wrapper.exists(CodeDisplay)).toBe(true);
     expect(wrapper.exists(LandingBox)).toBe(false);
   });
   it('Should render CodeDisplay when recStatus is on', () => {
     props.recStatus = RecState.ON;
+    props.codeBlocks = [
+      {
+        id: "2XSrhOx7E",
+        value: "cy.visit('https://review.feedzai.com/D27821#change-IxGsRMpnU7Uu');"
+      }
+    ];
     wrapper = shallow(<Body {...props} />);
     expect(wrapper.exists(CodeDisplay)).toBe(true);
     expect(wrapper.exists(LandingBox)).toBe(false);

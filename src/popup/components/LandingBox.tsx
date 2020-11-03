@@ -8,7 +8,7 @@ export default ({ isValidTab }: LandingBoxProps) => (
     <CypressCone />
     {(
       isValidTab
-        ? <p className="text">Click &apos;Start Recording&apos; to start recording!</p>
+        ? <p className="text">Click &apos;Record&apos; to start recording!</p>
         : <p className="text">This is not a valid page for recording.</p>
     )}
   </div>

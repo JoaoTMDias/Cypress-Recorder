@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LandingBox Text should display "Click Start Recording to start" when isValidTab is true 1`] = `
+exports[`LandingBox Text should display "Click Record to start" when isValidTab is true 1`] = `
 <div
   id="landing-box"
 >
@@ -8,7 +8,7 @@ exports[`LandingBox Text should display "Click Start Recording to start" when is
   <p
     className="text"
   >
-    Click 'Start Recording' to start recording!
+    Click 'Record' to start recording!
   </p>
 </div>
 `;

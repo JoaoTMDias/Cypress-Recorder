@@ -1,3 +1,6 @@
+/*
+* Hides visually, but is available for screen-readers
+*/
 .sr-only {
 	position: absolute;
 	width: 0.0625em;
@@ -10,13 +13,16 @@
 }
 
 /*
-  This will hide the focus indicator if the element receives focus via the mouse,
-  but it will still show up on keyboard focus.
+* This will hide the focus indicator if the element receives focus via the mouse,
+* but it will still show up on keyboard focus.
 */
 .js-focus-visible :focus:not(.focus-visible) {
 	outline: none;
 }
 
+/*
+* This will only apply motion when the user hasn't set a value on the "prefers-reduce-motion" query
+*/
 @mixin motion() {
 	@media (prefers-reduced-motion: no-preference) {
 		@content;

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as Icons from "./icons";
 
 export interface CodeBlockProps {
   index: number,
@@ -52,7 +53,7 @@ export default ({
         className="code-block__delete"
         onClick={() => destroyBlock(index)}
       >
-        <span>x</span>
+        <span><Icons.IconClose /></span>
         <span className="sr-only">{buttonText}</span>
       </button>
     </li>

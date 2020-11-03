@@ -5,7 +5,12 @@
 body {
 	height: calc(#{$max-height} * 0.9);
 	width: calc(#{$max-width} * 0.9);
-	font: 100% $font-stack;
+	font-style: normal;
+    font-weight: normal;
+    font-stretch: normal;
+    font-size: 100%;
+	line-height: normal;
+	font-family: $font-stack;
 	color: var(--color-primary, $color-primary);
 	background-color: var(--color-primary-background, $color-primary-background);
 	overscroll-behavior-y: none;
@@ -190,7 +195,7 @@ a {
 
 .text {
 	font-size: rem-calc(16);
-	margin-left: rem-calc(16);
+	margin: auto;
 	padding-top: rem-calc(16);
 }
 

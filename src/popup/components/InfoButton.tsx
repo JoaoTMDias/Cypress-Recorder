@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconInfo, IconBack } from './icons/index';
+import * as Icons from './icons/index';
 
 export interface InfoButtonProps {
   toggleInfoDisplay: () => void,
@@ -13,7 +13,7 @@ export default ({ shouldInfoDisplay, toggleInfoDisplay }: InfoButtonProps) => {
 
   const button = {
     label: shouldInfoDisplay ? 'Back to Recording' : 'Info',
-    icon: shouldInfoDisplay ? <IconBack /> : <IconInfo />,
+    icon: shouldInfoDisplay ? <Icons.IconBack /> : <Icons.IconInfo />,
   };
 
   return (

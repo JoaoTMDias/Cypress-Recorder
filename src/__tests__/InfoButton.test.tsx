@@ -17,13 +17,13 @@ describe('InfoButton', () => {
     props.shouldInfoDisplay = false;
     wrapper = shallow((<InfoButton {...props} />));
     expect(wrapper).toMatchSnapshot();
-    const button = wrapper.find('button');
+    const button = wrapper.find('.button__label');
     expect(button.text()).toBe('Info');
   });
   it('Button text should display "Recording Menu" when shouldInfoDisplay is true', () => {
     props.shouldInfoDisplay = true;
     wrapper = shallow((<InfoButton {...props} />));
-    const button = wrapper.find('button');
+    const button = wrapper.find('.button__label');
     expect(button.text()).toBe('Back to Recording');
   });
   it('Should invoke toggleInfoDisplay when button is clicked', () => {

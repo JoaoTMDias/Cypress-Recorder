@@ -5,12 +5,22 @@ exports[`toggle button should call handletoggle with argument "startRec" when cl
   className="footer__toggle-wrap"
 >
   <button
-    className="button "
+    className="button button--primary "
     disabled={false}
     onClick={[Function]}
     type="button"
   >
-    Start Recording
+    <span
+      className="span button__icon"
+      role="img"
+    >
+      <IconRecord />
+    </span>
+    <span
+      className="button__label"
+    >
+      Record
+    </span>
   </button>
 </div>
 `;
@@ -20,12 +30,22 @@ exports[`toggle button should call handletoggle with argument "startRec" when cl
   className="footer__toggle-wrap"
 >
   <button
-    className="button "
+    className="button button--primary "
     disabled={false}
     onClick={[Function]}
     type="button"
   >
-    Resume
+    <span
+      className="span button__icon"
+      role="img"
+    >
+      <IconPause />
+    </span>
+    <span
+      className="button__label"
+    >
+      Resume
+    </span>
   </button>
 </div>
 `;
@@ -35,12 +55,22 @@ exports[`toggle button should call handletoggle with argument "stopRec" when cli
   className="footer__toggle-wrap"
 >
   <button
-    className="button "
+    className="button button--primary "
     disabled={false}
     onClick={[Function]}
     type="button"
   >
-    Stop Recording
+    <span
+      className="span button__icon"
+      role="img"
+    >
+      <IconStop />
+    </span>
+    <span
+      className="button__label"
+    >
+      Stop
+    </span>
   </button>
 </div>
 `;
@@ -50,12 +80,22 @@ exports[`toggle button should not call handletoggle when clicked and recStatus i
   className="footer__toggle-wrap"
 >
   <button
-    className="disabled-button "
+    className="button button--primary button--is-disabled"
     disabled={true}
     onClick={[Function]}
     type="button"
   >
-    Invalid Tab
+    <span
+      className="span button__icon"
+      role="img"
+    >
+      <IconWarning />
+    </span>
+    <span
+      className="button__label"
+    >
+      Invalid Tab
+    </span>
   </button>
 </div>
 `;

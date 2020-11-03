@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ControlAction, RecState } from '../../constants';
-import { IconRecord, IconStop, IconPause, IconWarning } from "./icons"
+import * as Icons from "./icons"
 
 export interface ToggleButtonProps {
   isValidTab: boolean,
@@ -17,46 +17,39 @@ export default ({ recStatus, handleToggle, isValidTab }: ToggleButtonProps) => {
   };
 
   function renderIconContent() {
-    let options = {
-      label: "Record",
-      icon: <IconRecord />
+    const invalid = {
+      label: "Invalid Tab",
+      icon: <Icons.IconWarning />
     };
 
     switch (recStatus) {
       case RecState.ON:
-        options = {
+        return {
           label: "Stop",
-          icon: <IconStop />
+          icon: <Icons.IconStop />
         };
-        break;
 
       case RecState.PAUSED:
-        options = {
-          label: isValidTab ? "Resume" : "InvalidTab",
-          icon: isValidTab ? <IconPause /> : <IconWarning />
-        };
-        break;
+        return isValidTab ? {
+          label: "Resume",
+          icon: <Icons.IconPause />
+        } : invalid;
 
       case RecState.OFF:
       default:
-        break;
+        return isValidTab ? {
+          label: "Record",
+          icon: <Icons.IconRecord />
+        } : invalid;
     }
-
-    return (
-      <>
-        <span className="span button__icon" role="img">
-          {options.icon}
-        </span>
-        <span className="button__label">
-          {options.label}
-        </span>
-      </>
-    )
   }
 
-  const buttonClass: string = (!isValidTab && (recStatus === RecState.OFF || recStatus === RecState.PAUSED))
+  const disabled = !isValidTab && (recStatus === RecState.OFF || recStatus === RecState.PAUSED);
+  const buttonClass: string = disabled
     ? "button--is-disabled"
     : "";
+
+  const { icon, label } = renderIconContent();
 
   return (
     <div className="footer__toggle-wrap">
@@ -64,9 +57,14 @@ export default ({ recStatus, handleToggle, isValidTab }: ToggleButtonProps) => {
         type="button"
         className={`button button--primary ${buttonClass}`}
         onClick={handleClick}
-        disabled={!isValidTab && (recStatus === RecState.OFF || recStatus === RecState.PAUSED)}
+        disabled={disabled}
       >
-        {renderIconContent()}
+        <span className="span button__icon" role="img">
+          {icon}
+        </span>
+        <span className="button__label">
+          {label}
+        </span>
       </button>
     </div>
   );

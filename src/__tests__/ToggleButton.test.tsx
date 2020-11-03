@@ -14,7 +14,7 @@ describe('toggle button', () => {
     wrapper = shallow(<ToggleButton recStatus={RecState.OFF} isValidTab={false} handleToggle={handleToggleMock} />);
     expect(wrapper).toMatchSnapshot();
     const button = wrapper.find('button');
-    expect(button.text()).toBe('Invalid Tab');
+    expect(button.find(".button__label").text()).toBe('Invalid Tab');
     expect(button.prop('disabled')).toBe(true);
   });
   it('should call handletoggle with argument "startRec" when clicked and recStatus is "off" and tab is valid', () => {

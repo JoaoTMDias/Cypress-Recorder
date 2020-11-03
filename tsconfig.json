@@ -5,6 +5,9 @@
 		"rootDir": "./src",
 		"lib": ["dom", "es2015"],
 		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"allowJs": true,
+		"moduleResolution": "node",
 		"noEmit": true
 	},
 	"exclude": ["node_modules"]

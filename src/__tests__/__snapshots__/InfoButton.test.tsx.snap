@@ -3,11 +3,20 @@
 exports[`InfoButton Button text should display "Info" when shouldInfoDisplay is false 1`] = `
 <Fragment>
   <button
-    className="button header__info-button"
+    className="button button--anchor"
     onClick={[Function]}
     type="button"
   >
-    Info
+    <span
+      className="button__icon"
+    >
+      <IconInfo />
+    </span>
+    <span
+      className="button__label"
+    >
+      Info
+    </span>
   </button>
 </Fragment>
 `;

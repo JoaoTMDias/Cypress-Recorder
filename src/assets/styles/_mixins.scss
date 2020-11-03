@@ -134,3 +134,9 @@ $global-font-size: 100% !default;
 
 	@return $value;
 }
+
+@mixin colorScheme($scheme: dark) {
+	@media (prefers-color-scheme: #{$scheme}) {
+		@content;
+	}
+}

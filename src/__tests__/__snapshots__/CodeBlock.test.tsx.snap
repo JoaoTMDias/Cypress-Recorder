@@ -9,17 +9,19 @@ exports[`CodeBlock CodeBlock Should render a CodeBlock 1`] = `
   onDragStart={[Function]}
   onDrop={[Function]}
 >
-  <span>
+  <span
+    className="code-block__content"
+  >
     cy.get(
     <mark
-      className="selector"
+      className="code-block__selector"
     >
       '.button'
     </mark>
     ).click();
   </span>
   <button
-    className="delete"
+    className="code-block__delete"
     onClick={[Function]}
     type="button"
   >

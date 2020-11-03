@@ -29,28 +29,27 @@ export default ({
   const selector = text.slice(i, j);
   const postSelector = text.slice(j);
 
-
-  const buttonText = "Delete this line";
+  const buttonText = 'Delete this line';
 
   return (
     <li
       className={dragStatus}
       draggable
-      onDragStart={e => onDragStart(e, index)}
+      onDragStart={(e) => onDragStart(e, index)}
       onDragEnd={onDragEnd}
-      onDragOver={e => onDragOver(e, index)}
-      onDrop={e => onDrop(e, index)}
+      onDragOver={(e) => onDragOver(e, index)}
+      onDrop={(e) => onDrop(e, index)}
     >
-      <span>
+      <span className="code-block__content">
         {preSelector}
-        <mark className="selector">
+        <mark className="code-block__selector">
           {selector}
         </mark>
         {postSelector}
       </span>
       <button
         type="button"
-        className="delete"
+        className="code-block__delete"
         onClick={() => destroyBlock(index)}
       >
         <span>x</span>

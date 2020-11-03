@@ -3,6 +3,7 @@ import type { Block } from '../../types';
 import { RecState } from '../../constants';
 import CodeDisplay from './CodeDisplay';
 import LandingBox from './LandingBox';
+import Pulsar from './Pulsar';
 
 export interface BodyProps {
   isValidTab: boolean,
@@ -18,9 +19,20 @@ export default ({
   isValidTab,
   destroyBlock,
   moveBlock,
-}: BodyProps) => (
+}: BodyProps) => {
+  function renderContent() {
+    switch (recStatus) {
+      case RecState.OFF:
+        return <LandingBox isValidTab={isValidTab} />;
+
+      default:
+        return codeBlocks && codeBlocks.length > 0 ? <CodeDisplay codeBlocks={codeBlocks} destroyBlock={destroyBlock} moveBlock={moveBlock} /> : <Pulsar />;
+    }
+  }
+
+  return (
     <section className="body">
-      {recStatus === RecState.OFF && <LandingBox isValidTab={isValidTab} />}
-      {recStatus !== RecState.OFF && <CodeDisplay codeBlocks={codeBlocks} destroyBlock={destroyBlock} moveBlock={moveBlock} />}
+      {renderContent()}
     </section>
   );
+};

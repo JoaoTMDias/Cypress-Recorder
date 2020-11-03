@@ -5,7 +5,7 @@ exports[`toggle button should call handletoggle with argument "startRec" when cl
   className="footer__toggle-wrap"
 >
   <button
-    className="button footer__toogle"
+    className="button "
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -20,7 +20,7 @@ exports[`toggle button should call handletoggle with argument "startRec" when cl
   className="footer__toggle-wrap"
 >
   <button
-    className="button footer__toogle"
+    className="button "
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -35,7 +35,7 @@ exports[`toggle button should call handletoggle with argument "stopRec" when cli
   className="footer__toggle-wrap"
 >
   <button
-    className="button footer__toogle"
+    className="button "
     disabled={false}
     onClick={[Function]}
     type="button"
@@ -50,7 +50,7 @@ exports[`toggle button should not call handletoggle when clicked and recStatus i
   className="footer__toggle-wrap"
 >
   <button
-    className="disabled-button footer__toogle"
+    className="disabled-button "
     disabled={true}
     onClick={[Function]}
     type="button"

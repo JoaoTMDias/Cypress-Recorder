@@ -1,13 +1,27 @@
 @import "mixins";
 
-$font-stack: "Roboto", -apple-system, BlinkMacSystemFont, Open Sans, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+$font-stack: "Roboto Mono", -apple-system, BlinkMacSystemFont, Open Sans, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
 	Helvetica Neue, sans-serif;
 
-$color-primary: #333;
-$color-primary-background: #fff8dc;
-$color-cypress-green: rgb(49, 158, 107);
+$color-gray0: #f9faf9;
+$color-gray1: #ebeeed;
+$color-gray2: #dde2df;
+$color-gray3: #cdd5d1;
+$color-gray4: #bcc6c1;
+$color-gray5: #a9b6b0;
+$color-gray6: #93a49c;
+$color-gray7: #798e84;
+$color-gray8: #597166;
+$color-gray9: #1a201d;
+$color-gray10: #0e1110;
+$color-primary: $color-gray9;
+$color-primary-background: $color-gray0;
+$color-cypress-green: #309b69;
+$color-anchor: initial;
+$color-cypress-green-bg: darken($color-cypress-green, 8%);
+$color-cypress-green-border: darken($color-cypress-green, 4%);
 $color-pale-green: rgb(248, 251, 249);
-$color-black: #111;
+$color-black: $color-gray10;
 $color-cone-primary: #319e6b;
 $color-cone-secondary: #6aae8f;
 

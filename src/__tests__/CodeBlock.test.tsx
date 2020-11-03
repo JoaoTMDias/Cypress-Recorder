@@ -21,7 +21,7 @@ describe('CodeBlock', () => {
       expect(wrapper).toMatchSnapshot();
       const item = wrapper.find('li');
       expect(item.hasClass(props.dragStatus)).toBe(true);
-      expect(item.find('mark').hasClass('selector')).toBe(true);
+      expect(item.find('mark').hasClass('code-block__selector')).toBe(true);
     });
   });
 });

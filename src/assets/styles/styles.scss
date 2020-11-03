@@ -11,6 +11,10 @@ body {
 	overscroll-behavior-y: none;
 }
 
+a {
+	color: var(--color-anchor);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -29,40 +33,21 @@ body {
 	min-height: 100vh;
 }
 
-.button {
-	background-color: var(--color-cypress-green, $color-cypress-green);
-	border: 1px solid darken($color-pale-green, 36%);
-	margin: rem-calc(16);
-	padding: rem-calc(16);
-	border-radius: rem-calc(42);
-	font-size: rem-calc(16);
-	font-weight: 400;
-	color: var(--color-pale-green, $color-pale-green);
-	line-height: rem-calc(8);
-
-	&:hover,
-	&:focus {
-		background-color: var(--color-pale-green, $color-pale-green);
-		color: var(--color-cypress-green, $color-cypress-green);
-
-		@include motion() {
-			transition-property: all;
-			transition-duration: 150ms;
-			transition-timing-function: ease;
-			transition-delay: 0ms;
-		}
-	}
-}
+@import "button";
+@import "animation";
 
 .header,
 .footer {
+	left: 0;
+	display: flex;
 	position: fixed;
 	width: 100%;
+	padding: rem-calc(8) rem-calc(16);
 }
 
 .header {
 	top: 0;
-	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 
@@ -70,21 +55,21 @@ body {
 		color: var(--color-cypress-green, $color-cypress-green);
 		font-size: rem-calc(16);
 		font-weight: bold;
-		margin-left: rem-calc(16);
 	}
+}
 
-	&__info-button {
-		background-color: var(--color-primary-background, $color-primary-background);
-		border: 1px solid lighten($color-primary, 60%);
-		color: var(--color-primary, $color-primary);
-	}
+.header,
+.body,
+.footer,
+.infobox {
+	max-width: calc(100vw - #{rem-calc(32)});
 }
 
 .header,
 .main,
 .body,
 .infobox {
-	background-color: var(--color-primary-background, $color-primary-background);
+	background-color: transparent;
 }
 
 .main,
@@ -104,10 +89,24 @@ body {
 	flex-direction: column;
 	padding: rem-calc(20);
 
+	h1 {
+		color: var(--color-gray10);
+
+		@include colorScheme() {
+			color: var(--color-gray2);
+		}
+	}
+
 	p {
+		font-size: rem-calc(14);
 		max-width: clamp(45ch, 66vw, 70ch);
 		margin-bottom: rem-calc(16);
 		line-height: 1.618;
+		color: var(--color-gray9);
+
+		@include colorScheme() {
+			color: var(--color-gray3);
+		}
 	}
 }
 
@@ -132,6 +131,7 @@ body {
 
 	&__reset-wrap {
 		flex: 1;
+		margin-left: rem-calc(8);
 	}
 
 	&__copy-wrap {
@@ -145,6 +145,15 @@ body {
 
 	&__reset {
 		align-self: center;
+	}
+
+	&__reset,
+	&__copy {
+		&:hover,
+		&:focus {
+			border: 1px solid var(--color-gray0);
+			color: currentColor;
+		}
 	}
 
 	&__copy {
@@ -165,92 +174,7 @@ body {
 	flex-grow: 1;
 }
 
-#code-display {
-	margin: rem-calc(48) 0;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	align-items: flex-start;
-	flex-grow: 1;
-	padding: rem-calc(20);
-	overflow-wrap: break-word;
-}
-
-li {
-	display: flex;
-	justify-content: space-between;
-	width: 98.5%;
-	border: 1px solid gainsboro;
-	border-radius: rem-calc(2);
-	padding: rem-calc(8) rem-calc(4);
-
-	button {
-		visibility: hidden;
-		opacity: 0;
-		@include motion() {
-			transition: visibility 0s ease-out 75ms, opacity 300ms;
-		}
-	}
-
-	&:hover,
-	&:focus {
-		cursor: grab;
-
-		span {
-			opacity: 0.7;
-		}
-
-		mark {
-			align-self: flex-start;
-		}
-
-		button {
-			visibility: visible;
-			opacity: 1;
-			@include motion() {
-				transition: visibility 0s linear 0s, opacity 300ms;
-			}
-		}
-	}
-
-	&.drag-origin {
-		background-color: gainsboro;
-
-		mark {
-			background-color: gainsboro;
-		}
-	}
-
-	&.code-block {
-		background-color: var(--color-pale-green, $color-pale-green);
-	}
-}
-
-.delete {
-	background-color: rgba(49, 158, 107, 0.7);
-	align-self: center;
-	padding: rem-calc(2);
-	margin: rem-calc(2);
-	border-radius: rem-calc(4);
-	font-size: rem-calc(16);
-	font-weight: 400;
-	color: var(--color-pale-green, $color-pale-green);
-	line-height: rem-calc(8);
-
-	&:hover,
-	&:focus {
-		background-color: var(--color-cypress-green, $color-cypress-green);
-		color: var(--color-pale-green, $color-pale-green);
-		@include motion() {
-			transition: all 0.15s ease 0s;
-		}
-	}
-}
-
-mark {
-	color: var(--color-cypress-green, $color-cypress-green);
-	background-color: var(--color-pale-green, $color-pale-green);
-}
+@import "list";
 
 .disabled-button {
 	background-color: rgb(106, 174, 143);
@@ -265,7 +189,6 @@ mark {
 }
 
 .text {
-	color: var(--color-black, $color-black);
 	font-size: rem-calc(16);
 	margin-left: rem-calc(16);
 	padding-top: rem-calc(16);

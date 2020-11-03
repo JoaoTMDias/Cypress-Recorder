@@ -1,37 +1,33 @@
 :root {
-	--color-primary: $color-primary;
-	--color-primary-background: $color-primary-background;
-	--color-cypress-green: $color-cypress-green;
-	--color-pale-green: $color-pale-green;
-	--color-black: $color-black;
-	--color-cone-primary: $color-cone-primary;
-	--color-cone-secondary: $color-cone-secondary;
-}
+	--color-primary: #{$color-primary};
+	--color-primary-background: #{$color-primary-background};
+	--color-cypress-green: #{$color-cypress-green};
+	--color-cypress-green-bg: #{$color-cypress-green-bg};
+	--color-cypress-green-border: #{$color-cypress-green-border};
+	--color-pale-green: #{$color-pale-green};
+	--color-black: #{$color-black};
+	--color-cone-primary: #{$color-cone-primary};
+	--color-cone-secondary: #{$color-cone-secondary};
+	--color-anchor: #{$color-anchor};
+	--color-gray0: #{$color-gray0};
+	--color-gray1: #{$color-gray1};
+	--color-gray2: #{$color-gray2};
+	--color-gray3: #{$color-gray3};
+	--color-gray4: #{$color-gray4};
+	--color-gray5: #{$color-gray5};
+	--color-gray6: #{$color-gray6};
+	--color-gray7: #{$color-gray7};
+	--color-gray8: #{$color-gray8};
+	--color-gray9: #{$color-gray9};
+	--color-gray10: #{$color-gray10};
 
-@mixin colorScheme($scheme: dark) {
-	@media (prefers-color-scheme: #{$scheme}) {
-		:root {
-			@content;
-		}
+	@include colorScheme() {
+		--color-primary: var(--color-gray0);
+		--color-primary-background: var(--color-gray10);
+		--color-pale-green: #{invert($color-pale-green, 100%)};
+		--color-black: var(--color-gray10);
+		--color-cone-primary: #61c496;
+		--color-cone-secondary: #419b72;
+		--color-anchor: #e87e31;
 	}
-}
-
-@include colorScheme() {
-	--color-primary: #{invert($color-primary, 100%)};
-	--color-primary-background: #{invert($color-primary-background, 100%)};
-	--color-cypress-green: #{invert($color-cypress-green, 100%)};
-	--color-pale-green: #{invert($color-pale-green, 100%)};
-	--color-black: #{invert($color-black, 100%)};
-	--color-cone-primary: #{invert($color-cone-primary, 100%)};
-	--color-cone-secondary: #{invert($color-cone-secondary, 100%)};
-}
-
-@include colorScheme(light) {
-	--color-primary: $color-primary;
-	--color-primary-background: $color-primary-background;
-	--color-cypress-green: $color-cypress-green;
-	--color-pale-green: $color-pale-green;
-	--color-black: $color-black;
-	--color-cone-primary: $color-cone-primary;
-	--color-cone-secondary: $color-cone-secondary;
 }

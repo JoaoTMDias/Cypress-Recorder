@@ -1,0 +1,100 @@
+#code-display {
+	margin: rem-calc(48) 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: flex-start;
+	flex-grow: 1;
+	padding: rem-calc(20);
+	overflow-wrap: break-word;
+	width: 100%;
+}
+
+.code-block {
+	--code-block-border: #{$color-gray3};
+	--code-block-border-hover: #{$color-gray8};
+	--code-block-selector: var(--color-pale-green);
+
+	@include colorScheme() {
+		--code-block-border: #{$color-gray9};
+		--code-block-border-hover: #{$color-gray7};
+		--code-block-selector: currentColor;
+	}
+
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - #{rem-calc(32)});
+	border: 1px solid var(--code-block-border);
+	border-radius: rem-calc(2);
+	padding: rem-calc(8) rem-calc(4);
+	margin-bottom: rem-calc(4);
+	background-color: var(--color-pale-green, $color-pale-green);
+	margin: 0 auto;
+
+	&:last-child,
+	&:only-child {
+		margin-bottom: 0;
+	}
+
+	&__delete {
+		visibility: hidden;
+		opacity: 0;
+		@include motion() {
+			transition: visibility 0s ease-out 75ms, opacity 300ms;
+		}
+	}
+
+	&:hover,
+	&:focus {
+		cursor: grab;
+
+		border-color: var(--code-block-border-hover);
+
+		.code-block__selector {
+			align-self: flex-start;
+		}
+
+		.code-block__delete {
+			visibility: visible;
+			opacity: 1;
+			@include motion() {
+				transition: visibility 0s linear 0s, opacity 300ms;
+			}
+		}
+	}
+
+	&.drag-origin {
+		background-color: gainsboro;
+
+		.code-block__selector {
+			background-color: gainsboro;
+		}
+	}
+
+	&__delete {
+		background-color: rgba(49, 158, 107, 0.7);
+		align-self: center;
+		padding: rem-calc(2);
+		margin: rem-calc(2);
+		border-radius: rem-calc(4);
+		font-size: rem-calc(16);
+		font-weight: 400;
+		color: var(--color-pale-green, $color-pale-green);
+		line-height: rem-calc(8);
+
+		&:hover,
+		&:focus {
+			background-color: var(--color-cypress-green, $color-cypress-green);
+			color: var(--color-pale-green, $color-pale-green);
+			@include motion() {
+				transition: all 0.15s ease 0s;
+			}
+		}
+	}
+
+	&__selector {
+		color: var(--code-block-selector);
+		background-color: var(--color-cypress-green, $color-cypress-green);
+		word-break: break-word;
+	}
+}

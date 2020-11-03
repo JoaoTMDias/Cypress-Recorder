@@ -26,7 +26,7 @@ exports[`CodeBlock CodeBlock Should render a CodeBlock 1`] = `
     type="button"
   >
     <span>
-      x
+      <IconClose />
     </span>
     <span
       className="sr-only"
